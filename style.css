@@ -1,78 +1,147 @@
-body{
-    background-color: whitesmoke;
-    margin: 0;
-    padding: 0;
+/* page reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: whitesmoke;
+  display: flex;
+  flex-direction: column;
+  font-family: sans-serif, Verdana, Geneva, Tahoma, sans-serif;
+}
+
+nav  {
+  display: flex;
+  color: #fff;
+  justify-content: space-between;
+  background-color: #000;
+}
+
+nav .nav_items {
     display: flex;
-    flex-direction: column;
-    font-family: sans-serif, Verdana, Geneva, Tahoma, sans-serif; 
+    list-style: none;
 }
 
-header {
-    width: 100%;
-    padding: 20px;
-    height: 130px;
-    display: flex;
-    text-decoration: none;
-    align-items: center;
-    justify-content: center;
-    background-color: rgb(15, 15, 15);
-}
-
-header a {
-    color: white;
-    text-transform: uppercase;
-    margin-top: 40px;
-        
-}
-
-nav ul {
-    display: flex;
-    
-}
-
-nav ul a {
-    margin: -8rem 1.5rem ;
-    text-decoration: none;
-   
-}  
-
-header .logo a {
-    background-image: url(images/logo.jpg);
+nav .nav_items li a {
     display: inline-block;
-    background-size: 300px;
-    background-repeat: no-repeat;
-    position: relative;
-    top: -4rem;
-    text-indent: -999999px;
-    height: 150px;
-    width: 300px;
+    padding: 15px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #fff;
 }
+
+nav .nav_items li a:hover {
+    background: rgb(172, 168, 194);
+}
+
+nav .openMenu {
+    font-size: 2rem;
+    margin: 20px;
+    display: none;
+    cursor: pointer;
+}
+
+
+nav .closeMenu {
+    font-size: 2rem;
+    margin: 20px;
+    display: none;
+    cursor: pointer;
+}
+
+nav .icons {
+    display: none;
+}
+
+.fa-facebook:hover {color: rgb(75, 75, 212);}
+.fa-twitter:hover {color: rgb(51, 51, 129);}
+.fa-instagram:hover {color: rgb(212, 75, 127);}
+.fa-git:hover {color: rgb(212, 210, 75);}
+
+nav .logo {
+    margin: 6px;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+/*Navigation section*/
+
+.burger-menu {
+  color: lightseagreen;
+  font-size: 2rem;
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+  display: none;
+}
+
+/* food section */
 
 .food-menu {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: 4rem auto 4rem auto;
-    width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin: 4rem auto 4rem auto;
+  width: 100%;
 }
 
 .image-container img {
-    width: 250px;
-    height: 250px;
-    border-radius: 5px;
-    
+  width: 250px;
+  height: 250px;
+  border-radius: 5px;
+  margin: 2rem 2rem;
 }
 
 .img-text {
-    text-align: center;
+  text-align: center;
 }
 
 footer {
-    background:rgb(15, 15, 15);
-    color: grey;
-    font-size: 12px;
-    padding: 20px 20px;
-    text-align: center;
-    width: 100%;
+  background: rgb(15, 15, 15);
+  color: grey;
+  font-size: 12px;
+  padding: 20px 20px;
+  text-align: center;
+  width: 100%;
+}
+
+/* mobile responsiveness */
+
+@media (max-width: 800px) {
+    nav .nav_items {
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 10;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: rgb(12, 12, 12);
+        transition: top 1s ease;
+        display: none;
+    }
+    nav .nav_items .closeMenu {
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+    nav .openMenu {
+        display: block;
+    }
+    nav .nav_items li a:hover {
+        background: none;
+        color: olivedrab;
+        font-size: 1.6rem;
+    }
+    .icons i {
+        display: inline-block;
+        padding: 12px;
+    }
 }
